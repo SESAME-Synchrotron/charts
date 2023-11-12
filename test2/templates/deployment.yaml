@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}-deployment
+  labels:
+    {{- include "labels" . | indent 4 }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "selectorLabels" . | indent 6 }}
+  template:
+    metadata:
+      name: {{ .Values.iocName }}
+      labels:
+        {{- include "selectorLabels" . | indent 8 }}
+      {{- if eq .Values.autoRestart true }}
+      annotations:
+        rollme: {{ randAlphaNum 5 | quote }}
+      {{- end }}
+    spec:
+      hostNetwork: true
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      volumes:
+        - name: {{ .Chart.Name }}-pv-storage
+          persistentVolumeClaim:
+            claimName: {{ .Chart.Name }}-pv-claim
+      containers:
+        - name: {{ .Chart.Name }}
+          image: {{ .Values.image.name }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          stdin: true 
+          tty: true 
+          securityContext:
+            privileged: true
+          volumeMounts:
+            - mountPath: /{{ .Chart.Name }}/autosave/sav/
+              name: {{ .Chart.Name }}-pv-storage
+              subPath: {{ .Chart.Name }}

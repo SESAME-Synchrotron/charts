@@ -1,0 +1,7 @@
+iocName: test2-ioc
+nodeSelector:
+  beamline: beats
+image:
+  name: registry.docker.com/test2:latest
+  pullPolicy: Always
+autoRestart: true
