@@ -3,12 +3,12 @@ entries:
   test:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-11-09T10:19:39.604896937+03:00"
+    created: "2023-11-09T15:48:56.090465842+03:00"
     description: A Helm chart for test ioc
     digest: b789a42a5b3e2fd79506f56c388b24c7c3693340181fc392632b36092d4841e1
     name: test
     type: application
     urls:
-    - /git/charts/test-0.1.0.tgz
+    - http://10.1.100.16/docs/test-0.1.0.tgz
     version: 0.1.0
-generated: "2023-11-09T10:19:39.603966402+03:00"
+generated: "2023-11-09T15:48:56.089869764+03:00"
