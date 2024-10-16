@@ -3,7 +3,7 @@ entries:
   test:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-11-12T08:44:17.914634062+03:00"
+    created: "2024-10-16T14:51:36.545596843+03:00"
     description: A Helm chart for test ioc
     digest: b789a42a5b3e2fd79506f56c388b24c7c3693340181fc392632b36092d4841e1
     name: test
@@ -14,7 +14,7 @@ entries:
   test2:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-11-12T08:44:17.914982318+03:00"
+    created: "2024-10-16T14:51:36.545770881+03:00"
     description: A Helm chart for test2 ioc
     digest: f7e7a90b991ba93fb5b4467982bb85153b6448d2fffb116a904b2c3691f443d8
     name: test2
@@ -22,4 +22,15 @@ entries:
     urls:
     - http://10.1.100.16/docs/test2-0.1.0.tgz
     version: 0.1.0
-generated: "2023-11-12T08:44:17.914175329+03:00"
+  test4:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-10-16T14:51:36.545938848+03:00"
+    description: A Test Helm chart for Kubernetes
+    digest: 7b61259097f46bd782029bf1083fd86efbb7fa651f1b2337c0c512fc2db56e50
+    name: test4
+    type: application
+    urls:
+    - http://10.1.100.16/docs/test4-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-10-16T14:51:36.545333296+03:00"

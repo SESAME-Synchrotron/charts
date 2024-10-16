@@ -1,0 +1,14 @@
+iocName: test4-ioc
+
+nodeSelector:
+  labelKey: beamline
+  labelValue: test
+
+image:
+  name: test
+  repository: registry.docker.com
+  tag: "alpine"
+  pullPolicy: Always
+
+autoRestart: true
+
